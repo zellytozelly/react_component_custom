@@ -1,0 +1,12 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.componentsWrapper {
+  width: 360px;
+  height: 720px;
+  padding: 40px;
+  background-color: colors.$MOBILE_VIEW;
+  border-radius: 60px;
+}

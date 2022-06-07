@@ -1,0 +1,109 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.sliderWrapper {
+  margin: 0 0 40px;
+  background: colors.$WHITE;
+  border: 1px solid colors.$SHADOW;
+  border-radius: 5px;
+}
+
+.textBox {
+  padding: 20px;
+  margin: 20px;
+  color: colors.$SHADOW;
+  text-align: right;
+  background: colors.$WHITE_SECOND;
+  border: 1px solid colors.$SHADOW;
+  border-radius: 5px;
+}
+
+.text {
+  padding: 20px;
+  font-size: 1.2em;
+  font-weight: 900;
+  color: colors.$BLACK;
+}
+
+.mainSlider {
+  position: relative;
+  height: 6px;
+  margin: 20px 20px 60px;
+  background: colors.$GREY_BACKGROUND;
+  border-radius: 1px;
+}
+
+.sliderInput {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 6px;
+  // background: linear-gradient(90deg, colors.$GREEN_MINT) 0%, colors.$GREEN_MINT)
+  //     ${(props)=>(props.value)}%, colors.$GREY_BACKGROUND) ${(props)=>(props.value)}%);
+
+  input[type='range'] {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: colors.$GREY_BACKGROUND;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  &::-webkit-slider-thumb {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    background: colors.$GREEN_MINT;
+    border: 4px solid colors.$WHITE;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px colors.$GREY;
+    -webkit-appearance: none;
+  }
+
+  &::-webkit-meter-optimum-value {
+    background:
+      linear-gradient(
+        90deg,
+        colors.$GREEN_MINT
+        100%,
+        colors.$GREY_BACKGROUND 100%
+      );
+  }
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  line-height: 3px;
+  background: colors.$GREY_BACKGROUND;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  // background: ${(props)=>((props.position > props.currentValue) ? "colors.$GREY_BACKGROUND" : "colors.$GREEN_MINT")};
+}
+
+.rangeButton {
+  position: absolute;
+  width: 2.4rem;
+  padding: 3px 0;
+  margin: 30px 0;
+  font-size: 0.7em;
+  font-weight: bold;
+  color: colors.$GREY_LIGHTER;
+  text-align: center;
+  cursor: pointer;
+  background: colors.$GREY_BACKGROUND;
+  border: none;
+  border-radius: 2em;
+
+  &:hover {
+    color: colors.$WHITE;
+    background: colors.$GREEN_MINT;
+  }
+}

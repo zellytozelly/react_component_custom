@@ -1,0 +1,57 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.tabSetting {
+  padding: 5px;
+  margin: 40px 0;
+  text-align: center;
+  background: colors.$WHITE;
+  border: 1px solid colors.$SHADOW;
+  border-radius: 5px;
+}
+
+.tabList {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0 0 30px;
+  list-style: none;
+}
+
+.tabItem {
+  flex: 1;
+  padding: 12px;
+  font-weight: 900;
+  color: colors.$GREY_LIGHTER;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.tabItem.activeItem {
+  color: colors.$BLACK;
+}
+
+.clickSlideWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: colors.$GREY_LIGHT;
+}
+
+.clickSlide {
+  position: relative;
+  bottom: 0;
+  z-index: 2;
+  width: 33%;
+  height: 2px;
+  background-color: colors.$GREEN_MINT;
+  transition: all 0.2s ease-in-out;
+}

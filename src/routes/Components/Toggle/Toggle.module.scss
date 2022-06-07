@@ -1,0 +1,60 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.toggleWrapper {
+  position: relative;
+  width: 160px;
+  height: 30px;
+  padding: 10px;
+  margin: 0 60px 40px;
+  background: colors.$GREY_BACKGROUND;
+  border-radius: 2em;
+}
+
+.checkBox {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 78px;
+  padding: 12px 0;
+  cursor: pointer;
+  background: colors.$WHITE;
+  border-radius: 2em;
+  transition: all 0.2s ease-in-out;
+
+  &:checked {
+    left: 79px;
+    background: colors.$WHITE;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.leftSide {
+  position: absolute;
+  top: 9px;
+  left: 27px;
+  font-size: 0.813rem;
+  font-weight: 900;
+  color: colors.$BLACK_SECOND;
+  cursor: pointer;
+}
+
+.leftSide.changeColor {
+  color: colors.$GREY_LIGHTER;
+}
+
+.rightSide {
+  position: absolute;
+  top: 9px;
+  left: 107px;
+  font-size: 0.813rem;
+  font-weight: 900;
+  color: colors.$GREY_LIGHTER;
+  cursor: pointer;
+}
+
+.rightSide.changeColor {
+  color: colors.$BLACK_SECOND;
+}

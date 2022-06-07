@@ -1,0 +1,106 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.loginWrapper {
+  padding: 0 20px;
+  margin: 0 10px 0 0;
+}
+
+.label {
+  margin: 5px;
+  font-size: 0.8em;
+  color: colors.$GREY;
+}
+
+.inputText {
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  padding: 5px 15px;
+  margin: 5px;
+  background: colors.$WHITE_SECOND;
+  border: solid 1px colors.$SHADOW;
+  border-radius: 5px;
+  opacity: 0.8;
+
+  &:focus {
+    border: solid 1px colors.$GREY;
+    opacity: 1;
+  }
+}
+
+.emailBox {
+  position: relative;
+}
+
+.emailValidText {
+  margin-left: 5px;
+  font-size: 0.7em;
+  color: colors.$RED;
+  visibility: hidden;
+}
+
+.emailValidText.visible {
+  visibility: visible;
+}
+
+.checkToggle {
+  position: absolute;
+  top: 28px;
+  left: 198px;
+  width: 18px;
+  margin: 5px;
+  font-size: 0.8em;
+  color: colors.$GREY;
+
+  path {
+    fill: colors.$GREY_LIGHTER;
+  }
+}
+
+.checkToggle.changeMintColor {
+  path {
+    fill: colors.$GREEN_MINT;
+  }
+}
+
+.passwordBox {
+  position: relative;
+  margin-top: 20px;
+}
+
+.buttonWrapper {
+  position: absolute;
+  top: 28px;
+  left: 196px;
+  width: 23px;
+  // width: ${(props)=>(props.isrevealpwd) ? "23px": '25px';}
+  margin: 5px;
+  font-size: 0.8em;
+  color: colors.$GREY;
+  cursor: pointer;
+
+  path {
+    fill: colors.$GREY_LIGHTER;
+  }
+
+  .eyeToggleInput {
+    position: relative;
+    z-index: 1;
+    width: 23px;
+  }
+
+  .eyeToggleIcon {
+    position: relative;
+    top: -23px;
+    z-index: 0;
+  }
+}
+
+.buttonWrapper.changeMintColor {
+  path {
+    fill: colors.$GREEN_MINT;
+  }
+}

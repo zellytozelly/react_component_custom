@@ -1,0 +1,79 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.dropdownWrapper {
+  width: 100%;
+  margin-bottom: 300px;
+}
+
+.dropdownBox {
+  position: relative;
+  width: 240px;
+  padding: 14px 10px;
+  margin: 30px 0 0 20px;
+  font-size: 16px;
+  line-height: 15px;
+  color: colors.$BLACK_SECOND;
+  text-align: left;
+  cursor: pointer;
+  background: colors.$WHITE;
+  border: 1px solid colors.$SHADOW;
+  border-radius: 5px;
+}
+
+.arrow {
+  position: absolute;
+  top: 14px;
+  left: calc(100% - 22px);
+  font-size: 0.6em;
+}
+
+.selectWrapper {
+  position: relative;
+  width: 240px;
+  padding-bottom: 10px;
+  margin: 5px 0 0 20px;
+  line-height: 15px;
+  background: colors.$WHITE;
+  border: 1px solid colors.$SHADOW;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px 0 colors.$SHADOW, 0 1px 5px 0 colors.$GREY_LIGHT;
+}
+
+.iconPosition {
+  position: absolute;
+  top: 8px;
+  left: 5px;
+  width: 12px;
+  margin: 5px;
+
+  path {
+    fill: colors.$SHADOW;
+  }
+}
+
+.selectInput {
+  width: 200px;
+  padding: 10px 0 5px 10px;
+  margin-left: 20px;
+  line-height: 15px;
+  background: colors.$WHITE;
+  border-radius: 5px;
+}
+
+.selectOptions {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 15px;
+  color: colors.$BLACK_SECOND;
+  text-align: left;
+  cursor: pointer;
+  background: colors.$WHITE;
+
+  :hover {
+    background: colors.$WHITE_SECOND;
+  }
+}
